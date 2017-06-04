@@ -1,6 +1,11 @@
 <template>
   <div class="wb-paper">
-    <tonality tone="A" mode="minor" v-on:change="tonalityChanged"></tonality>
+    <tonality-toggler
+      :tone="tonality.tone"
+      :mode="tonality.mode.name"
+      v-on:toneChange="toneChanged"
+      v-on:modeChange="modeChanged"
+      />
     <div class="wb-chord-progression">
       <div v-for="chord in chords" v-on:click="chordClicked(chord)" class="wb-chord">
         {{ chord.text }}
@@ -8,7 +13,7 @@
     </div>
     <div class="wb-chord-progression">
       <div v-for="chord in chords" class="wb-chord">
-        {{ harmonize(chord) }}
+        {{ tonality.harmonize(chord) }}
       </div>
     </div>
     <p>{{ message }}</p>

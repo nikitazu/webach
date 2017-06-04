@@ -1,5 +1,7 @@
 import * as domain from '../core/domain.js';
-import tonality from 'vue-loader!../tonality.vue';
+import Mode from '../core/mode.js';
+import Tonality from '../core/tonality.js';
+import TonalityToggler from 'vue-loader!../tonality-toggler.vue';
 
 function Chord(text) {
 	this.text = text;
@@ -10,11 +12,11 @@ function Chord(text) {
 
 export default {
   components: {
-    tonality: tonality
+    TonalityToggler: TonalityToggler
   },
   data: () => {
     return {
-      tonality: new tonality.Tonality('A', tonality.Mode.minor),
+      tonality: new Tonality('A', Mode.minor),
       chords: [
         new Chord('I'),
         new Chord('II'),
@@ -36,11 +38,11 @@ export default {
       chord.increment();
       this.message = new Date();
     },
-    harmonize: function (chord) {
-      return this.tonality.harmonize(chord);
+    toneChanged: function () {
+      this.tonality.incrementTone();
     },
-    tonalityChanged: function (tonality) {
-      this.tonality = tonality;
+    modeChanged: function () {
+      this.tonality.incrementMode();
     }
   }
 }
