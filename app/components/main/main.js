@@ -10,6 +10,20 @@ function Chord(text) {
   };
 }
 
+function ChordProgression(chords) {
+  this.chords = chords;
+  this.add = function (chord) {
+    chord.increment();
+    this.chords.push(new Chord(''));
+  };
+  this.remove = function (chord) {
+    const i = this.chords.indexOf(chord);
+    if (i >= 0) {
+      this.chords.splice(i, 1);
+    }
+  };
+}
+
 export default {
   components: {
     TonalityToggler: TonalityToggler
@@ -17,7 +31,7 @@ export default {
   data: () => {
     return {
       tonality: new Tonality('A', Mode.minor),
-      chords: [
+      progression: new ChordProgression([
         new Chord('I'),
         new Chord('II'),
         new Chord('III'),
@@ -26,16 +40,21 @@ export default {
         new Chord('VI'),
         new Chord('VII'),
         new Chord('')
-      ],
+      ]),
       message: new Date()
     };
   },
   methods: {
-  	chordClicked: function (chord) {
-    	if (chord.text === "") {
-      	this.chords.push(new Chord(''));
+  	chordClicked: function (event, chord) {
+      const add    = chord.text === "";
+      const remove = !add && event.altKey;
+      if (add) {
+        this.progression.add(chord);
+      } else if (remove) {
+        this.progression.remove(chord);
+      } else {
+        chord.increment();
       }
-      chord.increment();
       this.message = new Date();
     },
     toneChanged: function () {

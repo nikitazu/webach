@@ -7,12 +7,14 @@
       v-on:modeChange="modeChanged"
       />
     <div class="wb-chord-progression">
-      <div v-for="chord in chords" v-on:click="chordClicked(chord)" class="wb-chord">
+      <div v-for="chord in progression.chords"
+           v-on:click="chordClicked($event, chord)"
+           class="wb-chord">
         {{ chord.text }}
       </div>
     </div>
     <div class="wb-chord-progression">
-      <div v-for="chord in chords" class="wb-chord">
+      <div v-for="chord in progression.chords" class="wb-chord">
         {{ tonality.harmonize(chord) }}
       </div>
     </div>
