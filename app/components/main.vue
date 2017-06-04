@@ -20,5 +20,5 @@
   </div>
 </template>
 
-<script src="./main/main.script.js"></script>
-<style src="./main/main.style.css"></style>
+<script src="./main/main.js"></script>
+<style src="./main/main.css"></style>
