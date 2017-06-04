@@ -1,0 +1,6 @@
+.wb-tonality {
+  display: flex;
+  color: blue;
+  font-weight: bold;
+  border: 1px solid blue;
+}
