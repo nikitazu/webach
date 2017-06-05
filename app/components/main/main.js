@@ -1,31 +1,13 @@
 import * as domain from '../core/domain.js';
 
-import Mode from '../core/mode.js';
-import Tonality from '../core/tonality.js';
+import Chord            from '../core/chord.js';
+import ChordProgression from '../core/chord-progression.js';
+import Mode             from '../core/mode.js';
+import Tonality         from '../core/tonality.js';
 
-import ChordBoxList from 'vue-loader!../chord-box-list.vue';
+import ChordBoxList       from 'vue-loader!../chord-box-list.vue';
 import ChordBoxListEditor from 'vue-loader!../chord-box-list-editor.vue';
-import TonalityToggler from 'vue-loader!../tonality-toggler.vue';
-
-function Chord(text) {
-	this.text = text;
-  this.increment = function () {
-    this.text = domain.incrementChordValue(this.text);
-  };
-}
-
-function ChordProgression(chords) {
-  this.chords = chords;
-  this.grow = function () {
-    this.chords.push(new Chord('I'));
-  };
-  this.remove = function (chord) {
-    const i = this.chords.indexOf(chord);
-    if (i >= 0) {
-      this.chords.splice(i, 1);
-    }
-  };
-}
+import TonalityToggler    from 'vue-loader!../tonality-toggler.vue';
 
 export default {
   components: {
