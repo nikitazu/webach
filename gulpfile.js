@@ -11,7 +11,8 @@ const webpackOptions = {
   watch: true,
   watchOptions: {
     aggregateTimeout: 100
-  }
+  },
+  devtool: "source-map"
 };
 
 gulp.task('default', () =>
