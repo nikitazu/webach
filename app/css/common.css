@@ -1,0 +1,12 @@
+﻿@import "palette.css";
+@import "sizes.css";
+
+body {
+  background-color: var(--color-silver);
+  display: flex;
+  justify-content: center;
+}
+
+h2 {
+  text-align: center;
+}

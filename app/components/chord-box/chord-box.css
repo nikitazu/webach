@@ -1,5 +1,4 @@
-@import "../../css/palette.css";
-@import "../../css/sizes.css";
+@import "../../css/common.css";
 
 .wb-chord-box {
   display: flex;

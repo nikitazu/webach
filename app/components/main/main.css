@@ -1,11 +1,4 @@
-@import "../../css/palette.css";
-@import "../../css/sizes.css";
-
-body {
-  background-color: var(--color-silver);
-  display: flex;
-  justify-content: center;
-}
+@import "../../css/common.css";
 
 .wb-paper {
   background-color: var(--color-white);
@@ -31,9 +24,4 @@ body {
   height: 24px;
   border: var(--line-size-m) solid var(--color-orange);
   border-radius: 10px;
-}
-
-h2,
-.wb-song h2 {
-  text-align: center;
 }
