@@ -30,38 +30,56 @@ export default {
   },
   data: () => {
     return {
-      tonality: new Tonality('A', Mode.minor),
-      progression: new ChordProgression([
-        new Chord('I'),
-        new Chord('II'),
-        new Chord('III'),
-        new Chord('IV'),
-        new Chord('V'),
-        new Chord('VI'),
-        new Chord('VII'),
-        new Chord('')
-      ]),
+      progressions: [
+        new ChordProgression([
+          new Chord('I'),
+          new Chord('IV'),
+          new Chord('I'),
+          new Chord('V'),
+          new Chord('')
+        ]),
+        new ChordProgression([
+          new Chord('I'),
+          new Chord('III'),
+          new Chord('V'),
+          new Chord('I'),
+          new Chord('')
+        ])
+      ],
+      song: {
+        name: "Little green tree is cold at winter",
+        parts: [
+          { name: "A",
+            tonality: new Tonality('C', Mode.major),
+            progressions: [ 0, 1 ]
+          },
+          { name: "B",
+            tonality: new Tonality('A', Mode.minor),
+            progressions: [ 1, 0 ]
+          }
+        ]
+      },
       message: new Date()
     };
   },
   methods: {
-  	chordClicked: function (event, chord) {
+  	chordClicked: function (event, progression, chord) {
       const add    = chord.text === "";
       const remove = !add && event.altKey;
       if (add) {
-        this.progression.add(chord);
+        progression.add(chord);
       } else if (remove) {
-        this.progression.remove(chord);
+        progression.remove(chord);
       } else {
         chord.increment();
       }
       this.message = new Date();
     },
-    toneChanged: function () {
-      this.tonality.incrementTone();
+    toneChanged: function (tonality) {
+      tonality.incrementTone();
     },
-    modeChanged: function () {
-      this.tonality.incrementMode();
+    modeChanged: function (tonality) {
+      tonality.incrementMode();
     }
   }
 }
