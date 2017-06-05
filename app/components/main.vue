@@ -23,11 +23,11 @@
             v-on:toneChange="toneChanged(part.tonality)"
             v-on:modeChange="modeChanged(part.tonality)"
             />
-          <div v-for="pi in part.progressions" class="wb-chord-progression">
-            <template v-for="chord in progressions[pi].chords">
-              <chord-box :text="part.tonality.harmonize(chord)">
-              </chord-box>
-            </template>
+          <div v-for="pindex in part.progressions" class="wb-chord-progression">
+            <chord-box-list
+              :chords="progressions[pindex].chords"
+              :getValue="chord => part.tonality.harmonize(chord)"
+            />
           </div>
         </div>
       </div>

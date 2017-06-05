@@ -1,0 +1,6 @@
+@import "../../css/common.css";
+
+.wb-chord-box-list {
+  display: flex;
+  flex-direction: row;
+}

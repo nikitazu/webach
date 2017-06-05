@@ -5,7 +5,7 @@ export default {
   },
   methods: {
     boxClicked: function (event) {
-      this.$emit('change', event);
+      this.$emit('boxClick', event);
     }
   }
 };
