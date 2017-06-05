@@ -1,16 +1,18 @@
 <template>
   <div class="wb-paper">
+    
     <section>
       <h2>Chord progressions</h2>
-      <div v-for="progression in progressions"
-           class="wb-chord-progression">
-        <div v-for="chord in progression.chords"
-             v-on:click="chordClicked($event, progression, chord)"
-             class="wb-chord">
-          {{ chord.text }}
-        </div>
-      </div>
+      <template v-for="progression in progressions"> 
+        <chord-box-list-editor
+          :chords="progression.chords"
+          :getValue="c => c.text"
+          v-on:boxClick="(e,c)=>editorBoxClicked(e, c, progression)"
+          v-on:addClick="editorAddClicked(progression)"
+        />
+      </template>
     </section>
+    
     <section class="wb-song">
       <h2>{{ song.name }}</h2>
       <div v-for="part in song.parts"
@@ -23,15 +25,16 @@
             v-on:toneChange="toneChanged(part.tonality)"
             v-on:modeChange="modeChanged(part.tonality)"
             />
-          <div v-for="pindex in part.progressions" class="wb-chord-progression">
+          <template v-for="pindex in part.progressions">
             <chord-box-list
               :chords="progressions[pindex].chords"
-              :getValue="chord => part.tonality.harmonize(chord)"
+              :getValue="c => part.tonality.harmonize(c)"
             />
-          </div>
+          </template>
         </div>
       </div>
     </section>
+    
     <p>{{ message }}</p>
   </div>
 </template>

@@ -1,0 +1,14 @@
+@import "../../css/common.css";
+
+.wb-chord-box-list-editor {
+  display: flex;
+  flex-direction: row;
+}
+
+.wb-chord-box-list-editor > .wb-chord-box {
+  opacity: 0.5;
+}
+
+.wb-chord-box-list-editor > .wb-chord-box:hover {
+  opacity: 1;
+}

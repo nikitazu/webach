@@ -4,6 +4,7 @@ import Mode from '../core/mode.js';
 import Tonality from '../core/tonality.js';
 
 import ChordBoxList from 'vue-loader!../chord-box-list.vue';
+import ChordBoxListEditor from 'vue-loader!../chord-box-list-editor.vue';
 import TonalityToggler from 'vue-loader!../tonality-toggler.vue';
 
 function Chord(text) {
@@ -15,9 +16,8 @@ function Chord(text) {
 
 function ChordProgression(chords) {
   this.chords = chords;
-  this.add = function (chord) {
-    chord.increment();
-    this.chords.push(new Chord(''));
+  this.grow = function () {
+    this.chords.push(new Chord('I'));
   };
   this.remove = function (chord) {
     const i = this.chords.indexOf(chord);
@@ -30,6 +30,7 @@ function ChordProgression(chords) {
 export default {
   components: {
     ChordBoxList: ChordBoxList,
+    ChordBoxListEditor: ChordBoxListEditor,
     TonalityToggler: TonalityToggler
   },
   data: () => {
@@ -39,15 +40,13 @@ export default {
           new Chord('I'),
           new Chord('IV'),
           new Chord('I'),
-          new Chord('V'),
-          new Chord('')
+          new Chord('V')
         ]),
         new ChordProgression([
           new Chord('I'),
           new Chord('III'),
           new Chord('V'),
-          new Chord('I'),
-          new Chord('')
+          new Chord('I')
         ])
       ],
       song: {
@@ -67,23 +66,22 @@ export default {
     };
   },
   methods: {
-  	chordClicked: function (event, progression, chord) {
-      const add    = chord.text === "";
-      const remove = !add && event.altKey;
-      if (add) {
-        progression.add(chord);
-      } else if (remove) {
-        progression.remove(chord);
-      } else {
-        chord.increment();
-      }
-      this.message = new Date();
-    },
     toneChanged: function (tonality) {
       tonality.incrementTone();
     },
     modeChanged: function (tonality) {
       tonality.incrementMode();
+    },
+    editorBoxClicked: function (event, chord, progression) {
+      const remove = event.altKey;
+      if (remove) {
+        progression.remove(chord);
+      } else {
+        chord.increment();
+      }
+    },
+    editorAddClicked: function (progression) {
+      progression.grow();
     }
   }
 }
