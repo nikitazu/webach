@@ -1,6 +1,8 @@
+@import "../../css/palette.css";
+
 .wb-tonality-toggler {
   display: flex;
-  color: blue;
+  color: var(--color-blue);
   font-weight: bold;
-  border: 1px solid blue;
+  border: 1px solid var(--color-blue);
 }

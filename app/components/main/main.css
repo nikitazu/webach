@@ -1,11 +1,13 @@
+@import "../../css/palette.css";
+
 body {
-  background: silver;
+  background-color: var(--color-silver);
   display: flex;
   justify-content: center;
 }
 
 .wb-paper {
-  background-color: white;
+  background-color: var(--color-white);
   width: 600px;
   height: 800px;
   box-shadow: 2px 4px 4px rgba(0,0,0,0.2);
@@ -23,9 +25,9 @@ body {
   flex-direction: column;
   text-align: center;
   margin: 2px;
-  background-color: yellow;
+  background-color: var(--color-yellow);
   width: 24px;
   height: 24px;
-  border: 2px solid orange;
+  border: 2px solid var(--color-orange);
   border-radius: 10px;
 }
