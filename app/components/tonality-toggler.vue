@@ -1,10 +1,10 @@
 <template>
   <div class="wb-tonality-toggler">
-    <div v-on:click="toneClicked">
+    <div v-on:click="toneClicked" class="wb-tonality-toggler-tone">
       {{ tone }}
     </div>
     <div v-on:click="modeClicked">
-      {{ mode }}
+      ({{ mode }})
     </div>
   </div>
 </template>

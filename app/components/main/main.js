@@ -1,6 +1,9 @@
 import * as domain from '../core/domain.js';
+
 import Mode from '../core/mode.js';
 import Tonality from '../core/tonality.js';
+
+import ChordBox from 'vue-loader!../chord-box.vue';
 import TonalityToggler from 'vue-loader!../tonality-toggler.vue';
 
 function Chord(text) {
@@ -26,6 +29,7 @@ function ChordProgression(chords) {
 
 export default {
   components: {
+    ChordBox: ChordBox,
     TonalityToggler: TonalityToggler
   },
   data: () => {

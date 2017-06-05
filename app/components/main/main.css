@@ -1,4 +1,5 @@
 @import "../../css/palette.css";
+@import "../../css/sizes.css";
 
 body {
   background-color: var(--color-silver);
@@ -11,7 +12,7 @@ body {
   width: 600px;
   height: 800px;
   box-shadow: 2px 4px 4px rgba(0,0,0,0.2);
-  padding: 8px;
+  padding: var(--spacing-l);
 }
 
 .wb-chord-progression {
@@ -28,7 +29,7 @@ body {
   background-color: var(--color-yellow);
   width: 24px;
   height: 24px;
-  border: 2px solid var(--color-orange);
+  border: var(--line-size-m) solid var(--color-orange);
   border-radius: 10px;
 }
 

@@ -1,0 +1,15 @@
+@import "../../css/palette.css";
+@import "../../css/sizes.css";
+
+.wb-chord-box {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  margin: var(--spacing-s);
+  width: 24px;
+  height: 24px;
+  border: var(--line-size-m) solid var(--color-orange);
+  border-radius: 10px;
+  background-color: var(--color-yellow);
+}
