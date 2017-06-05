@@ -5,9 +5,12 @@ const webpack2 = require('webpack');
 //const path = require('path');
 
 const webpackOptions = {
-  watch: false,
   output: {
     filename: 'bundle.js'
+  },
+  watch: true,
+  watchOptions: {
+    aggregateTimeout: 100
   }
 };
 
