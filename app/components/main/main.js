@@ -64,6 +64,9 @@ export default {
     },
     editorAddClicked: function (progression) {
       progression.grow();
+    },
+    addProgressionClicked: function () {
+      this.progressions.push(new ChordProgression([new Chord('I')]));
     }
   }
 }

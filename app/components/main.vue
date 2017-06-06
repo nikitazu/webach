@@ -11,6 +11,9 @@
           v-on:addClick="editorAddClicked(progression)"
         />
       </template>
+      <button v-on:click="addProgressionClicked">
+        Add progression
+      </button>
     </section>
     
     <section class="wb-song">
