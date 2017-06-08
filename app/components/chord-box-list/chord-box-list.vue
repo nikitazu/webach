@@ -6,8 +6,7 @@
         :sharp="getValue(chord).sharp"
         :flat="getValue(chord).flat"
         :suffix="getValue(chord).suffix"
-        :major="getValue(chord).suffix === ' '"
-        :minor="getValue(chord).suffix === 'm'"
+        :mode="getValue(chord).mode"
         :clickable="boxClickable"
         v-on:boxClick="boxClicked($event, chord)"
       />

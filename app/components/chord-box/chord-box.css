@@ -8,9 +8,9 @@
   margin: var(--spacing-s);
   width: var(--object-size-m);
   height: var(--object-size-m);
-  border: var(--line-size-m) solid var(--color-orange);
+  border: var(--line-size-m) solid var(--color-red);
   border-radius: 10px;
-  background-color: var(--color-yellow);
+  background-color: var(--color-red-light);
 }
 
 .wb-chord-box_clickable {
@@ -18,11 +18,18 @@
 }
 
 .wb-chord-box_major {
-  background-color: var(--color-green);
+  background-color: var(--color-green-light);
+  border-color: var(--color-green);
 }
 
 .wb-chord-box_minor {
   background-color: var(--color-blue-light);
+  border-color: var(--color-blue);
+}
+
+.wb-chord-box_diminished {
+  background-color: var(--color-blue-green);
+  border-color: var(--color-blue);
 }
 
 .wb-chord-box__key {

@@ -18,10 +18,11 @@ export default function Tonality(tone, mode) {
       'diminished' : 'dim'
     };
     return {
-        key:   key.replace(/(#|b)/, ''),
-        sharp: key.endsWith('#'),
-        flat:  key.endsWith('b'),
-        suffix: suffixes[chordFunction.type]
+      key:    key.replace(/(#|b)/, ''),
+      sharp:  key.endsWith('#'),
+      flat:   key.endsWith('b'),
+      suffix: suffixes[chordFunction.type],
+      mode:   chordFunction.type
     };
   };
   this.incrementTone = function () {
