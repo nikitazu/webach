@@ -8,7 +8,7 @@
         :suffix="getValue(chord).suffix"
         :mode="getValue(chord).mode"
         :clickable="boxClickable"
-        v-on:boxClick="boxClicked($event, chord)"
+        @boxClick="boxClicked($event, chord)"
       />
     </template>
   </div>

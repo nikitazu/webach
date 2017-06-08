@@ -4,12 +4,12 @@
       :chords="chords"
       :getValue="getValue"
       :boxClickable="true"
-      v-on:boxClick="boxClicked"
+      @boxClick="boxClicked"
     />
     <chord-box
       text="+"
-      v-on:boxClick="addClicked"
       :clickable="true"
+      @boxClick="addClicked"
     />
   </div>
 </template>

@@ -7,11 +7,11 @@
         <chord-box-list-editor
           :chords="progression.chords"
           :getValue="c => c.text"
-          v-on:boxClick="(e,c)=>editorBoxClicked(e, c, progression)"
-          v-on:addClick="editorAddClicked(progression)"
+          @boxClick="(e,c)=>editorBoxClicked(e, c, progression)"
+          @addClick="editorAddClicked(progression)"
         />
       </template>
-      <button v-on:click="addProgressionClicked">
+      <button @click="addProgressionClicked">
         Add progression
       </button>
     </section>
@@ -25,8 +25,8 @@
           <tonality-toggler
             :tone="part.tonality.tone"
             :mode="part.tonality.mode.name"
-            v-on:toneChange="toneChanged(part.tonality)"
-            v-on:modeChange="modeChanged(part.tonality)"
+            @toneChange="toneChanged(part.tonality)"
+            @modeChange="modeChanged(part.tonality)"
             />
           <template v-for="pindex in part.progressions">
             <chord-box-list
