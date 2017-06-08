@@ -6,9 +6,13 @@
   flex-direction: column;
   text-align: center;
   margin: var(--spacing-s);
-  width: 24px;
-  height: 24px;
+  width: var(--object-size-m);
+  height: var(--object-size-m);
   border: var(--line-size-m) solid var(--color-orange);
   border-radius: 10px;
   background-color: var(--color-yellow);
+}
+
+.wb-chord-box__clickable {
+  cursor: pointer;
 }

@@ -1,5 +1,5 @@
 export default {
-  props: ['text'],
+  props: ['text','clickable'],
   data: function() {
     return { /* empty */ };
   },

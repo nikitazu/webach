@@ -4,7 +4,7 @@ export default {
   components: {
     ChordBox: ChordBox
   },
-  props: [ 'chords', 'getValue' ],
+  props: [ 'chords', 'getValue', 'boxClickable' ],
   data: function() {
     return { /* empty */ };
   },

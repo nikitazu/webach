@@ -3,8 +3,10 @@
   --spacing-m:   4px;
   --spacing-l:   8px;
   --spacing-xl: 16px;
-  
+
   --line-size-s: 1px;
   --line-size-m: 2px;
   --line-size-l: 4px;
+
+  --object-size-m: 48px;
 }

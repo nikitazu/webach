@@ -1,5 +1,9 @@
 <template>
-  <div v-on:click="boxClicked($event)" class="wb-chord-box">
+  <div
+    class="wb-chord-box"
+    v-on:click="boxClicked($event)"
+    v-bind:class="{ 'wb-chord-box__clickable' : clickable }"
+    >
     {{ text }}
   </div>
 </template>

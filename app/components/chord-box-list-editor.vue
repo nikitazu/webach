@@ -3,9 +3,14 @@
     <chord-box-list
       :chords="chords"
       :getValue="getValue"
+      :boxClickable="true"
       v-on:boxClick="boxClicked"
     />
-    <chord-box text="+" v-on:boxClick="addClicked" />
+    <chord-box
+      text="+"
+      v-on:boxClick="addClicked"
+      :clickable="true"
+    />
   </div>
 </template>
 
