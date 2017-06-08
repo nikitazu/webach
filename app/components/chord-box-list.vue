@@ -2,7 +2,12 @@
   <div class="wb-chord-box-list">
     <template v-for="chord in chords">
       <chord-box
-        :text="getValue(chord)"
+        :text="getValue(chord).key || getValue(chord)"
+        :sharp="getValue(chord).sharp"
+        :flat="getValue(chord).flat"
+        :suffix="getValue(chord).suffix"
+        :major="getValue(chord).suffix === ' '"
+        :minor="getValue(chord).suffix === 'm'"
         :clickable="boxClickable"
         v-on:boxClick="boxClicked($event, chord)"
       />

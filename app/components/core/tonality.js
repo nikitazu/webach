@@ -11,13 +11,18 @@ export default function Tonality(tone, mode) {
       this.mode.toneShift,
       this.mode.chordShift
     );
-    const chordFunction = mode.getChordFunction(chord.text);
+    const chordFunction = this.mode.getChordFunction(chord.text);
     const suffixes = {
-      'major' : '',
+      'major' : ' ',
       'minor' : 'm',
       'diminished' : 'dim'
     };
-    return key + suffixes[chordFunction.type];
+    return {
+        key:   key.replace(/(#|b)/, ''),
+        sharp: key.endsWith('#'),
+        flat:  key.endsWith('b'),
+        suffix: suffixes[chordFunction.type]
+    };
   };
   this.incrementTone = function () {
     this.tone = domain.incrementToneValue(this.tone);

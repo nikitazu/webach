@@ -3,8 +3,8 @@
 .wb-chord-box {
   display: flex;
   justify-content: center;
-  flex-direction: column;
-  text-align: center;
+  flex-direction: row;
+  align-items: center;
   margin: var(--spacing-s);
   width: var(--object-size-m);
   height: var(--object-size-m);
@@ -13,6 +13,29 @@
   background-color: var(--color-yellow);
 }
 
-.wb-chord-box__clickable {
+.wb-chord-box_clickable {
   cursor: pointer;
+}
+
+.wb-chord-box_major {
+  background-color: var(--color-green);
+}
+
+.wb-chord-box_minor {
+  background-color: var(--color-blue-light);
+}
+
+.wb-chord-box__key {
+}
+
+.wb-chord-box__key_sharp:after {
+  content: "♯";
+}
+
+.wb-chord-box__key_flat:after {
+  content: "♭";
+}
+
+.wb-chord-box__suffix {
+  font-style: italic;
 }
