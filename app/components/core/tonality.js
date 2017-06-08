@@ -5,12 +5,19 @@ export default function Tonality(tone, mode) {
   this.tone = tone;
   this.mode = mode;
   this.harmonize = function (chord) {
-    return domain.harmonize(
+    const key = domain.harmonize(
       this.tone,
       chord.text,
       this.mode.toneShift,
       this.mode.chordShift
     );
+    const chordFunction = mode.getChordFunction(chord.text);
+    const suffixes = {
+      'major' : '',
+      'minor' : 'm',
+      'diminished' : 'dim'
+    };
+    return key + suffixes[chordFunction.type];
   };
   this.incrementTone = function () {
     this.tone = domain.incrementToneValue(this.tone);

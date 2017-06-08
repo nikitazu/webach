@@ -3,7 +3,7 @@
     
     <section>
       <h2>Chord progressions</h2>
-      <template v-for="progression in progressions"> 
+      <template v-for="progression in progressions">
         <chord-box-list-editor
           :chords="progression.chords"
           :getValue="c => c.text"

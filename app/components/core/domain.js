@@ -16,6 +16,26 @@ const toneMatrix = [
 ];
 const tones = ['C', 'Db', 'D', 'Eb', 'E', 'F', 'Gb', 'G', 'Ab', 'A', 'Bb', 'B'];
 const chords = ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII'];
+export const chordsInMode = {
+    major: {
+      'I'   : { face: 'I',   type: 'major' },
+      'II'  : { face: 'ii',  type: 'minor' },
+      'III' : { face: 'iii', type: 'minor' },
+      'IV'  : { face: 'IV',  type: 'major' },
+      'V'   : { face: 'V',   type: 'major' },
+      'VI'  : { face: 'vi',  type: 'minor' },
+      'VII' : { face: 'vii', type: 'diminished' }
+    },
+    minor: {
+      'I'   : { face: 'i',   type: 'minor' },
+      'II'  : { face: 'ii',  type: 'diminished' },
+      'III' : { face: 'III', type: 'major' },
+      'IV'  : { face: 'iv',  type: 'minor' },
+      'V'   : { face: 'V',   type: 'major' }, // Dominant
+      'VI'  : { face: 'VI',  type: 'major' },
+      'VII' : { face: 'VII', type: 'major' }
+    }
+}
 
 const shiftToneIndex = utils.shiftIndex1(tones.length);
 const shiftChordIndex = utils.shiftIndex1(chords.length);
