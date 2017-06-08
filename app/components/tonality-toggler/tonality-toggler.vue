@@ -9,5 +9,5 @@
   </div>
 </template>
 
-<script src="./tonality-toggler/tonality-toggler.js"></script>
-<style src="./tonality-toggler/tonality-toggler.css"></style>
+<script src="./tonality-toggler.js"></script>
+<style src="./tonality-toggler.css"></style>

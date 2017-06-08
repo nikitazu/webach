@@ -14,5 +14,5 @@
   </div>
 </template>
 
-<script src="./chord-box-list-editor/chord-box-list-editor.js"></script>
-<style src="./chord-box-list-editor/chord-box-list-editor.css"></style>
+<script src="./chord-box-list-editor.js"></script>
+<style src="./chord-box-list-editor.css"></style>

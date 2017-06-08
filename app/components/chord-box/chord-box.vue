@@ -11,5 +11,5 @@
   </div>
 </template>
 
-<script src="./chord-box/chord-box.js"></script>
-<style src="./chord-box/chord-box.css"></style>
+<script src="./chord-box.js"></script>
+<style src="./chord-box.css"></style>

@@ -5,9 +5,9 @@ import ChordProgression from '../core/chord-progression.js';
 import Mode             from '../core/mode.js';
 import Tonality         from '../core/tonality.js';
 
-import ChordBoxList       from 'vue-loader!../chord-box-list.vue';
-import ChordBoxListEditor from 'vue-loader!../chord-box-list-editor.vue';
-import TonalityToggler    from 'vue-loader!../tonality-toggler.vue';
+import ChordBoxList       from 'vue-loader!../chord-box-list/chord-box-list.vue';
+import ChordBoxListEditor from 'vue-loader!../chord-box-list-editor/chord-box-list-editor.vue';
+import TonalityToggler    from 'vue-loader!../tonality-toggler/tonality-toggler.vue';
 
 export default {
   components: {

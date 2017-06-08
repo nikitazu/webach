@@ -1,4 +1,4 @@
-import ChordBox from 'vue-loader!../chord-box.vue';
+import ChordBox from 'vue-loader!../chord-box/chord-box.vue';
 
 export default {
   components: {
